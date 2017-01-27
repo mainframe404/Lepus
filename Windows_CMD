@@ -1,0 +1,80 @@
+
+
+Display a local share
+NET SHARE sharename
+
+
+Display a list of computers in the current domain.
+NET VIEW
+
+
+To see a list of shares on a remote computer
+NET VIEW \\ComputerName
+
+
+To see a list of all shares in the domain:
+NET VIEW /DOMAIN
+
+
+To see a list of shares on a different domain
+NET VIEW /DOMAIN:domainname
+
+
+To see a list of shares on a remote Netware computer
+NET VIEW /NETWORK:NW [\\ComputerName]
+
+
+Create a new local file share
+NET SHARE sharename=drive:path /REMARK:"text" [/CACHE:Manual | Automatic | No ]
+
+
+Limit the number of users who can connect to a share
+NET SHARE sharename /USERS:number /REMARK:"text"
+
+
+Remove any limit on the number of users who can connect to a share
+NET SHARE sharename /UNLIMITED /REMARK:"text"
+
+
+Delete a share
+NET SHARE {sharename | devicename | drive:path} /DELETE
+
+
+Delete all shares that apply to a given device
+NET SHARE devicename /DELETE
+
+In this case the devicename can be a printer (Lpt1) or a pathname (C:\Docs\)
+
+
+Join a file share (Drive MAP)
+NET USE
+
+
+Display all the open shared files on a server and the lock-id
+NET FILE
+
+
+Close a shared file (disconnect other users and remove file locks)
+NET FILE id /CLOSE
+
+
+List all sessions connected to this machine
+NET SESSION
+
+
+List sessions from a given machine
+NET SESSION \\ComputerName
+
+
+
+Disconnect all sessions connected to this machine
+NET SESSION /DELETE
+
+
+Disconnect all sessions connected to this machine (without any prompts)
+NET SESSION /DELETE /y
+
+
+Disconnect sessions from a given machine
+NET SESSION \\ComputerName /DELETE
+
